@@ -362,7 +362,6 @@ img {
   margin-bottom: 30px;
 }
 .form-checkbox-input {
-  outline: none;
   position: absolute;
   width: 16px;
   height: 15px;
@@ -370,17 +369,10 @@ img {
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-  opacity: 0;
-}
-.form-checkbox-icon-base {
-  display: inline-block;
-  position: absolute;
-  width: 16px;
-  height: 15px;
-
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
+  z-index: 1000;
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-checkbox-icon {
   display: inline-block;
@@ -390,21 +382,16 @@ img {
 
   top: 50%;
   left: 12px;
-  opacity: 0;
   transform: translateY(-50%);
+  opacity: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-checkbox-field:focus > .form-checkbox-icon,
-.form-checkbox-field:hover > .form-checkbox-icon,
-.form-checkbox-input:focus + .form-checkbox-icon,
-.form-checkbox-input:hover + .form-checkbox-icon {
+.form-checkbox-input:checked + .form-checkbox-icon,
+.form-checkbox-input:focus + .form-checkbox-icon {
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-checkbox-field:focus > .form-checkbox-icon-base,
-.form-checkbox-field:hover > .form-checkbox-icon-base,
-.form-checkbox-input:focus + .form-checkbox-icon-base,
-.form-checkbox-input:hover + .form-checkbox-icon-base {
+.form-checkbox-input:not(:checked) + .form-checkbox-icon {
   opacity: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -914,122 +901,3 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
-/* Tests */
-/* .form {
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-input {
-  padding: 8px;
-  font-family: inherit;
-}
-
-label {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 8px;
-} */
-
-/* Form exemple */
-.group {
-  margin-bottom: 20px;
-}
-.group-title {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.topic-options,
-.experince-options {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.topic-options li {
-  display: flex;
-  align-items: center;
-}
-.topic-options input[type='checkbox'] {
-  width: 20px;
-  height: 20px;
-}
-.topic-options label {
-  font-size: 20px;
-  margin-left: 20px;
-}
-.experince-options {
-}
-.date {
-  border-width: 2px;
-  border-radius: 4px;
-  padding: 20px 40px;
-}
-.comment {
-  padding: 8px;
-}
-/* Вариант Ани */
-/* .visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
-} */
-
-/* Репета 12 занятие */
-/* .form {
-  padding: 20px;
-  margin: 20px;
-  width: 600px;
-}
-
-.form-field {
-  position: relative;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.form-label {
-  position: absolute;
-  top: 50%;
-  left: 40px;
-  transform: translateY(-50%);
-
-  transition: transform 250ms linear;
-}
-
-.form-input {
-  width: 100%;
-  margin: 0;
-  padding: 10px 20px;
-  padding-left: 40px;
-  font: inherit;
-  border-radius: 3px;
-  border: 1px solid #2a2a2a;
-}
-
-.icon {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-
-  transform: translateY(-50%);
-
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: tomato;
-}
-
-.form-field:focus-within > .icon {
-  background-color: blue;
-}
-
-.form-field:focus-within > .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
-  transform: translateY(-50px);
-} */
