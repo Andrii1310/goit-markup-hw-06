@@ -15,38 +15,37 @@
     <!-- Шапка сайта -->
     <header class="header">
 
-        <div class="container header-page">
-            <nav class="heder-nav">
-                <a class="logo nav-link" href="./index.html">Web<span class="logo-end">Studio</span></a>
-                
-                <ul class="site-nav">
-                    <li class="nav-item">
-                        <a href="./index.html" class="nav-link current">Студия</a>
-                    </li>
+        <div class="header-page container">
+            <nav class="header-nav">
 
-                    <li class="nav-item">
-                        <a href="./html/portfolio.html" class="nav-link">Портфолио</a>
+                <a class="logo" href="./index.html">Web<span class="logo-end">Studio</span></a>
+                
+                <ul class="header-nav__list">
+                    <li class="header-nav__item">
+                        <a href="./index.html" class="header-nav__link--current">Студия</a>
                     </li>
-                    
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Контакты</a>
+                    <li class="header-nav__item">
+                        <a href="./html/portfolio.html" class="header-nav__link">Портфолио</a>
+                    </li>                    
+                    <li class="header-nav__item">
+                        <a href="" class="header-nav__link">Контакты</a>
                     </li>
                 </ul>
 
             </nav>
 
             <ul class="header-contact">
-                <li class="contact-item">
-                    <a href="mailto:info@devstudio.com" class="nav-link"  target="_blank" rel="noopener noreferrer">
-                            <svg class="icon envelope">
+                <li class="header-contact__item">
+                    <a href="mailto:info@devstudio.com" class="header-contact__link"  target="_blank" rel="noopener noreferrer">
+                            <svg class="header-contact__link--icon icon-envelope">
                                 <use href="./images/sprite.svg#icon-envelope"></use>
                             </svg>
                         info@devstudio.com</a>
                 </li>
 
-                <li class="contact-item">
-                    <a href="tel:+380961111111" class="nav-link">
-                        <svg class="icon phone">
+                <li class="header-contact__item">
+                    <a href="tel:+380961111111" class="header-contact__link">
+                        <svg class="header-contact__link--icon icon-phone">
                             <use href="./images/sprite.svg#icon-phone"></use>
                         </svg>                        
                     +38 096 111 11 11</a>
@@ -59,61 +58,66 @@
     <main>
         <!-- Герой -->
         <section class="hero">
-
             <div class="container">
                 <h1 class="hero-title">эффективные решения для вашего бизнеса</h1>
-                <button class="hero-button button-submit" type="button" data-modal-open>Заказать услугу</button>
-            </div>           
-
+                <button class="button" type="button" data-modal-open>Заказать услугу</button>
+            </div>
         </section>
+        
         <!-- Модальное окно -->
         <div class="backdrop is-hidden" data-modal>                  
             <!-- Форма -->
-            <form class="form" autocomplete="off">                                     
-                <!-- Кнопка закрытия модального окна -->
-                <button class="modal-close" data-modal-close></button>
-                <!-- Заглавие -->
-                <h3 class="form-title-text">Оставьте свои данные, мы вам перезвоним</h3>
-                <!-- Поле имя -->                    
-                <label class="form-field">
-                    <span class="form-label">Имя</span> 
-                    <input class="form-input" type="text" name="name" placeholder=" " autofocus required>
-                    <svg class="form-icon">
-                        <use href="./images/sprite.svg#icon-person-black-18dp"></use>
-                    </svg>
-                </label>
-                <!-- Поле телефон -->                   
-                <label class="form-field" for="tel">
-                    <span class="form-label">Телефон</span>
-                    <input class="form-input" type="tel" name="tel" placeholder=" " required>
-                    <svg class="form-icon">
-                        <use href="./images/sprite.svg#icon-phone-black-18dp"></use>
-                    </svg>
-                </label>
-                <!-- Поле почта -->                    
-                <label class="form-field" for="mail">
-                    <span class="form-label">Почта</span>
-                    <input class="form-input" type="email" name="mail" placeholder=" " required>
-                    <svg class="form-icon">
-                        <use href="./images/sprite.svg#icon-email-black-18dp"></use>
-                    </svg>
-                </label>
-                <!-- Коментарий -->                    
-                <label class="form-field" for="comment">
-                    <span class="form-label">Коментарий</span>
-                    <textarea class="form-input form-textarea" name="comment" placeholder="Введите текст"></textarea>
-                </label>
-                <!-- Пользовательское соглашение -->
-                <label class="form-checkbox-field" for="policy">
-                    <input class="form-checkbox-input" type="checkbox" name="policy" required>
-                    <svg class="form-checkbox-icon">
-                        <use href="./images/sprite.svg#icon-chek"></use>
-                    </svg>                                                
-                    <span class="form-checkbox-label">Соглашаюсь с рассылкой и принимаю <a class="form-checkbox-anchor" href="">Условия договора</a></span>
-                </label>
-                <!-- Кнопка отправить -->
-                <button class="button-submit" type="submit">Отправить</button>                                        
-            </form> 
+            <div class="form">
+                <form class="form-modal" autocomplete="off">
+                    <!-- Кнопка закрытия модального окна -->
+                    <button class="form-button__close" data-modal-close></button>
+                    <!-- Заглавие -->
+                    <h3 class="form-title">Оставьте свои данные, мы вам перезвоним</h3>
+                    <!-- Поле имя -->
+                    <label class="form-field">
+                        <span class="form-label">Имя</span>
+                        <input class="form-input" type="text" name="name" placeholder=" " autofocus required>
+                        <svg class="form-icon">
+                            <use href="./images/sprite.svg#icon-person-black-18dp"></use>
+                        </svg>
+                    </label>
+                    <!-- Поле телефон -->
+                    <label class="form-field" for="tel">
+                        <span class="form-label">Телефон</span>
+                        <input class="form-input" type="tel" name="tel" placeholder=" " required>
+                        <svg class="form-icon">
+                            <use href="./images/sprite.svg#icon-phone-black-18dp"></use>
+                        </svg>
+                    </label>
+                    <!-- Поле почта -->
+                    <label class="form-field" for="mail">
+                        <span class="form-label">Почта</span>
+                        <input class="form-input" type="email" name="mail" placeholder=" " required>
+                        <svg class="form-icon">
+                            <use href="./images/sprite.svg#icon-email-black-18dp"></use>
+                        </svg>
+                    </label>
+                    <!-- Коментарий -->
+                    <label class="form-field" for="comment">
+                        <span class="form-label">Коментарий</span>
+                        <textarea class="form-input form-textarea" name="comment" placeholder="Введите текст"></textarea>
+                    </label>
+                    <!-- Пользовательское соглашение -->
+                    <label class="form-checkbox">
+                        <input class="form-checkbox__input" type="checkbox" name="policy">
+                        <svg class="checkbox">
+                            <use href="./images/sprite.svg#icon-checked"></use>
+                        </svg>
+                        <span class="form-checkbox__label">Соглашаюсь с рассылкой и принимаю 
+                            <a class="form-checkbox__anchor" href="" target="_blank" rel="noopener noreferrer">Условия договора</a>
+                        </span>
+                    </label>
+                    
+                    <!-- Кнопка отправить -->
+                    <button class="button" type="submit">Отправить</button>
+                </form>
+            </div>
+             
         </div>
         <!-- Наши преимущества -->
         <section class="advantages">
@@ -409,11 +413,11 @@
     </main>
     <!-- Подвал -->
     <footer class="footer">
-        <div class="container footer-page">
+        <div class="footer-page container">
             <ul class="footer-list">
                 <!-- Лого и контакты -->
                 <li class="footer-item">                    
-                    <a class="logo link" href="./index.html">Web<span class="logo-footer">Studio</span></a>
+                    <a class="logo" href="./index.html">Web<span class="logo-footer">Studio</span></a>
                     <address class="footer-adress">г. Киев, пр-т Леси Украинки, 26</address>
                     <ul class="footer-contact list">
                         <li class="footer-contact-item">
@@ -463,7 +467,7 @@
                     <h3 class="footer-title">Подпишитесь на рассылку</h3>
                     <form class="footer-form">
                         <input class="footer-form-input" type="email" name="mail" placeholder="E-mail" autocomplete="off">
-                        <button class="button-submit" type="submit">Подписаться
+                        <button class="button" type="submit">Подписаться 
                             <svg class="footer-icon-send">
                                 <use href="./images/sprite.svg#icon-send"></use>
                             </svg>
